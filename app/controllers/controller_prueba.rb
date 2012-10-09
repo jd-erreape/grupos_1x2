@@ -1,3 +1,0 @@
-class Prueba
-
-end
