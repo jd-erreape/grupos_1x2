@@ -1,0 +1,13 @@
+<h1>ASPECTOS TÉCNICOS DEL SISTEMA</h1>
+
+<h2>Estadísticas de los partidos</h2>
+
+<%= link_to 'Acceso a Estadísticas LFP', STATISTICS_FRAME_URL, :class => 'iframe fancybox statistics' %>
+
+<h2>Carga dinámica de los partidos de la jornada</h2>
+
+<ol>
+  <% @matches.each do |match| %>
+      <li><%= p "#{match.teams[0].name} VS #{match.teams[1].name}"  %></li>
+  <% end %>
+</ol>

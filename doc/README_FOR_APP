@@ -1,0 +1,112 @@
+Use this README file to introduce your application and point to useful places in the API for learning more.
+Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+Usando bundler 1.0.21
+
+Entorno:
+
+RubyGems Environment:
+  - RUBYGEMS VERSION: 1.8.10
+  - RUBY VERSION: 1.9.3 (2011-10-30 patchlevel 0) [x86_64-darwin11.2.0]
+  - INSTALLATION DIRECTORY: /Users/juandediosherrero/.rvm/gems/ruby-1.9.3-p0@1x2
+  - RUBY EXECUTABLE: /Users/juandediosherrero/.rvm/rubies/ruby-1.9.3-p0/bin/ruby
+  - EXECUTABLE DIRECTORY: /Users/juandediosherrero/.rvm/gems/ruby-1.9.3-p0@1x2/bin
+  - RUBYGEMS PLATFORMS:
+    - ruby
+    - x86_64-darwin-11
+  - GEM PATHS:
+     - /Users/juandediosherrero/.rvm/gems/ruby-1.9.3-p0@1x2
+     - /Users/juandediosherrero/.rvm/gems/ruby-1.9.3-p0@global
+  - GEM CONFIGURATION:
+     - :update_sources => true
+     - :verbose => true
+     - :benchmark => false
+     - :backtrace => false
+     - :bulk_threshold => 1000
+  - REMOTE SOURCES:
+     - http://rubygems.org/
+
+
+Distintos entornos: http://jqr.github.com/2009/04/25/deploying-multiple-environments-on-heroku.html
+
+- Control de versiones GIT
+
+    - git init
+    - git add .
+    - git commit -m "mensaje_de_commit"
+    - git push -f heroku
+
+- Deploy Heroku
+
+    - Instalamos las gemas de heroku
+    - heroku create nombre_app
+    - Hacemos commit con git push -f heroku
+
+- Distintos entornos (staging y production)
+
+    - heroku create myapp-staging --remote staging
+    - heroku create myapp-production --remote production
+
+    - git push staging master
+    - git push production master
+
+    - heroku rake db:migrate --app myapp-staging
+    - heroku rake db:migrate --app myapp-production
+
+    - heroku open --app myapp-staging
+    - heroku open --app myapp-production
+
+- URLS
+
+    - http://clinica-ocular-staging.herokuapp.com/
+
+- Control de versiones GIT
+
+    - git init
+    - git add .
+    - git commit -m "mensaje_de_commit"
+    - git push -f heroku
+
+- Deploy Heroku
+
+    - Instalamos las gemas de heroku
+    - heroku create nombre_app
+    - Hacemos commit con git push -f heroku
+
+- Distintos entornos (staging y production)
+
+    - git push staging master
+    - git push production master
+
+    - heroku rake db:migrate --app myapp-staging
+    - heroku rake db:migrate --app myapp-production
+
+    - heroku open --app myapp-staging
+    - heroku open --app myapp-production
+
+- URLS
+
+***************** GENERACIÓN DE FICHEROS PARA ENTORNO DE TEST ********************
+
+ group :test do
+   gem 'rspec-rails', '2.11.0'
+   gem 'database_cleaner', '0.8.0'
+   gem 'machinist', '2.0'
+   gem 'shoulda-matchers', '1.3.0'
+   gem 'faker', '1.1.2'
+ end
+
+ 1.- rails generate rspec:install
+ 2.- Incluir en config/application.rb
+
+    config.generators do |generator|
+      generator.test_framework :rspec
+    end
+
+3.- rails generate machinist:install
+4.- Incluir en config/application.rb
+
+    config.generators do |g|
+      g.fixture_replacement :machinist
+    end
+
