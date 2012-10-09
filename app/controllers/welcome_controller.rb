@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   before_filter :load_matches
 
   def reload_matches
-    render 'index'
+    render 'index.html.erb'
   end
 
   protected
