@@ -23,6 +23,20 @@ end
 gem 'jquery-rails', '2.1.3'
 gem 'fancybox-rails', '0.1.4'
 
+#Deploy at Heroku
+gem 'heroku', '2.14.0'
+#gem 'taps', '0.3.23'
+
+#Gemas para el entorno de producción en Heroku
+# pg -> PostrgresSQL
+# thin -> Webserver alternativo a Webrick
+# therubyracer -> Javascript Runtime
+group :staging, :production do
+  gem 'pg'
+  gem 'thin'
+  gem 'therubyracer'
+end
+
 gem 'mechanize', '2.5.1'
 
 group :test do
