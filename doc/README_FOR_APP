@@ -110,3 +110,7 @@ Distintos entornos: http://jqr.github.com/2009/04/25/deploying-multiple-environm
       g.fixture_replacement :machinist
     end
 
+***************************** PROBLEMA CON LA GEMA PG EN UBUNTU ********************
+
+ - Ejecutar: "sudo apt-get install libpq-dev"
+
