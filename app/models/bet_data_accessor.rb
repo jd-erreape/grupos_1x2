@@ -19,6 +19,8 @@ class BetDataAccessor
 
   private
 
+
+
   def read_bet_data
     agent = get_page_agent
     matches = load_matches agent
