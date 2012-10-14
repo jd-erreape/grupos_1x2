@@ -1,0 +1,4 @@
+$("#match_<%= @bet.match.id %>").replaceWith("<%= escape_javascript(render(:partial => 'rounds/bets/bet', :locals => {:bet => @bet})) %>");
+$(".match-detail-block").html("<%= escape_javascript(render :partial => 'matches/match') %>");
+$(".match-overall-info").html("<%= escape_javascript(render :partial => 'bets/overall') %>");
+

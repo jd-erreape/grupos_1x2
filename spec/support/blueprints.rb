@@ -20,3 +20,15 @@ end
 MatchTeam.blueprint do
   # Attributes here
 end
+
+Bet.blueprint do
+  # Attributes here
+end
+
+User.blueprint do
+  # Attributes here
+end
+
+Round.blueprint do
+  # Attributes here
+end

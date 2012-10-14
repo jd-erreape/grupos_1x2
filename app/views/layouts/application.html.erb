@@ -3,13 +3,19 @@
 <head>
   <title>Grupos1x2</title>
   <link href='http://fonts.googleapis.com/css?family=Marvel:400,700' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class='wrapper'>
+  <div class='header' style='float:right'>
+    <%= link_to 'Salir', destroy_user_session_path, :method => :delete if current_user %>
+  </div>
+  <%= yield %>
+</div>
+
 
 </body>
 </html>

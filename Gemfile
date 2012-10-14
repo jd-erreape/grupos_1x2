@@ -47,6 +47,9 @@ group :test do
   gem 'faker', '1.1.2'
 end
 
+gem 'inherited_resources', '1.3.1'
+gem 'devise', '2.1.2'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

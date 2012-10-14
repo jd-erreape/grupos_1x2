@@ -1,0 +1,19 @@
+$(".match-detail-block").html("");
+$(".match-overall-info").html("");
+$('.matches-block').animate({
+    width:'400px',
+    height:'420px'
+}, 400, function () {
+    $('.matches-block').animate({
+        width:'900px',
+        height: '680px'
+    }, 400, function () {
+        $(".match-detail-block").html("<%= escape_javascript(render :partial => 'matches/match') %>");
+        $(".match-overall-info").html("<%= escape_javascript(render :partial => 'bets/overall') %>");
+    });
+});
+
+
+
+
+

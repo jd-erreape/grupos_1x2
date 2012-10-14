@@ -1,22 +1,10 @@
 <h1>ASPECTOS TÉCNICOS DEL SISTEMA</h1>
 
-<h2>Estadísticas de los partidos</h2>
+<ul>
+  <li><%= link_to 'Partidos de la jornada', round_bets_path(@round) %></li>
+  <li><%= link_to 'Acceso a Estadísticas LFP', STATISTICS_FRAME_URL, :class => 'iframe fancybox statistics' %> </li>
+</ul>
 
-<%= link_to 'Acceso a Estadísticas LFP', STATISTICS_FRAME_URL, :class => 'iframe fancybox statistics' %>
 
-<h2>Carga dinámica de los partidos de la jornada</h2>
 
-<div class='matches-block'>
-  <ul class='match-list'>
-    <% @matches.each do |match| %>
-        <li class='match-item'>
-          <div class='match-container'><%= p "#{match.teams[0].name} VS #{match.teams[1].name}" %> </div>
-          <div class='bet-container'>
-            <span class='bet bet-1'>1</span>
-            <span class='bet bet-X'>X</span>
-            <span class='bet bet-2'>2</span>
-          </div>
-        </li>
-    <% end %>
-  </ul>
-</div>
+

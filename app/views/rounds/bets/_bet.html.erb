@@ -1,0 +1,47 @@
+<% match = bet.match %>
+
+<li id="match_<%= match.id %>" class='match-item'>
+
+  <%= link_to match_path(match), :remote => true, :class => 'link-no-color' do %>
+      <div class='match-container'><%=  "#{match.teams[0].name} - #{match.teams[1].name}" %> </div>
+  <% end %>
+  <div class='bet-container'>
+    <span class='bet bet-1'>1</span>
+    <span class='bet bet-X'>X</span>
+    <span class='bet bet-2'>2</span>
+  </div>
+
+
+  <%= form_for bet, :url => bet.persisted? ? match_bet_path(match, bet) : match_bets_path(match), :remote => true, :html => {:class => "match_#{match.id}_bet_form"} do |form| %>
+      <%= form.hidden_field :selection, :class => 'bet_selection_value' %>
+  <% end %>
+
+  <%= javascript_tag do %>
+
+      <% if bet.selection == 0 %>
+          $("#match_<%= match.id %> .bet-1").addClass("selected");
+      <% elsif bet.selection == 1 %>
+          $("#match_<%= match.id %> .bet-X").addClass("selected");
+      <% elsif bet.selection == 2 %>
+          $("#match_<%= match.id %> .bet-2").addClass("selected");
+      <% end %>
+
+      $('#match_<%= match.id %> .bet-1').on('click', function(){
+          $(".bet_selection_value").val(0);
+          $(".<%= "match_#{match.id}_bet_form" %>").submit();
+      });
+
+      $('#match_<%= match.id %> .bet-X').on('click', function(){
+          $(".bet_selection_value").val(1);
+          $(".<%= "match_#{match.id}_bet_form" %>").submit();
+      });
+
+      $('#match_<%= match.id %> .bet-2').on('click', function(){
+          $(".bet_selection_value").val(2);
+          $(".<%= "match_#{match.id}_bet_form" %>").submit();
+      });
+
+
+  <% end %>
+
+</li>

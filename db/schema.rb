@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007212211) do
+ActiveRecord::Schema.define(:version => 20121014114845) do
+
+  create_table "bets", :force => true do |t|
+    t.integer  "match_id"
+    t.integer  "selection"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+  add_index "bets", ["match_id"], :name => "index_bets_on_match_id"
+  add_index "bets", ["user_id"], :name => "index_bets_on_user_id"
 
   create_table "match_teams", :force => true do |t|
     t.integer  "match_id"
@@ -28,6 +39,15 @@ ActiveRecord::Schema.define(:version => 20121007212211) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "position"
+    t.integer  "round_id"
+  end
+
+  add_index "matches", ["round_id"], :name => "index_matches_on_round_id"
+
+  create_table "rounds", :force => true do |t|
+    t.integer  "number"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "teams", :force => true do |t|
@@ -35,5 +55,19 @@ ActiveRecord::Schema.define(:version => 20121007212211) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",              :default => "", :null => false
+    t.string   "encrypted_password", :default => "", :null => false
+    t.integer  "sign_in_count",      :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

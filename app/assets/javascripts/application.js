@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require fancybox
+//= require jquery.jqplot.min
 //= require_tree .
 
 $(document).ready(function () {
@@ -22,5 +23,6 @@ $(document).ready(function () {
     $("a.fancybox.iframe.statistics").fancybox({
         height: "67%%"
     });
+
 
 });

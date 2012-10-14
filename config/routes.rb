@@ -1,4 +1,8 @@
 Grupos1x2::Application.routes.draw do
+
+
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -51,6 +55,14 @@ Grupos1x2::Application.routes.draw do
   root :to => 'welcome#index'
 
   match 'reload_matches' => 'welcome#reload_matches'
+
+  resources :matches, :only => [:show] do
+    resources :bets, :only => [:create, :update], :controller => 'matches/bets'
+  end
+
+  resources :rounds do
+    resources :bets, :only => [:index], :controller => 'rounds/bets'
+  end
 
   # See how all your routes lay out with "rake routes"
 

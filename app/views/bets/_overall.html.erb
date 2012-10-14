@@ -1,0 +1,27 @@
+<h2>Elecciones de los usuarios</h2>
+
+<div id='choices'></div>
+
+<%= javascript_tag do %>
+
+    $(document).ready(function(){
+      var data = [
+        ['1', <%= @voted_1 %>],['X', <%= @voted_X %>], ['2', <%= @voted_2 %>]
+      ];
+      var plot1 = jQuery.jqplot ('choices', [data],
+        {
+          seriesDefaults: {
+            // Make this a pie chart.
+            renderer: jQuery.jqplot.PieRenderer,
+            rendererOptions: {
+              // Put data labels on the pie slices.
+              // By default, labels show the percentage of the slice.
+              showDataLabels: true
+            }
+          },
+          legend: { show:true, location: 'w' }
+        }
+      );
+    });
+
+<% end %>
