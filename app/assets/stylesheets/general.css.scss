@@ -1,0 +1,78 @@
+body {
+  font-family: 'Marvel', sans-serif;
+}
+
+/*Bloque de apuestas*/
+
+.matches-block {
+  border: solid;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  width: 500px;
+  height: 100%;
+}
+
+/*Lista de partidos*/
+
+.match-list {
+  display: block;
+  width: 300px;
+  list-style-type: none;
+}
+
+.match-item {
+  text-transform: uppercase;
+  color: #A6B3C6;
+  max-width: 300px;
+  display: block;
+  overflow: hidden;
+}
+
+li.match-item:nth-child(1) {
+  margin-top: 2px;
+  border-top: solid #E26A6F;
+}
+
+li.match-item:nth-child(4), li.match-item:nth-child(8), li.match-item:nth-child(11), li.match-item:nth-child(14), li.match-item:nth-child(15) {
+  margin-bottom: 2px;
+  border-bottom: solid #E26A6F;
+}
+
+.match-container {
+  float: left;
+}
+
+.bet-container {
+  width: 56px;
+  background-color: #E26A6F;
+  float: right;
+  text-align: center;
+  color: white;
+}
+
+.bet {
+  display: block;
+  width: 25%;
+  float: left;
+  margin: 2px;
+  background-color: white;
+  color: #E26A6F;
+  cursor: pointer;
+}
+
+.bet-1 {
+  margin-left: 3px;
+}
+
+.bet-X {
+
+}
+
+.bet-2 {
+
+}
+
+.selected{
+  font-weight: bold;
+  color: black;
+}
