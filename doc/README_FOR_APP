@@ -114,3 +114,6 @@ Distintos entornos: http://jqr.github.com/2009/04/25/deploying-multiple-environm
 
  - Ejecutar: "sudo apt-get install libpq-dev"
 
+***************************** PROBLEMA CON LA GEMA PG EN MAC ***********************
+
+- Ejecutar: "brew install postgresql" (En caso de no tener homebrew instalado, instalar 'ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"')
