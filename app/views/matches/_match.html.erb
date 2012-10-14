@@ -1,15 +1,18 @@
 <div id="match_<%= @match.id %>" class='match-info'>
   <h2 class='match-header'>DETALLE DEL PARTIDO</h2>
 
-  <div class='local-team'>
-  <span class='team-name'>
+  <section class="match-statistics">
+    <div class='local-team'>
+        <span class='team-name'>
     <h1><%= @match.local_team.name %></h1>
-  </span>
-  </div>
+        </span>
+    </div>
 
-  <div class='visit-team'>
-  <span class='team-name'>
+    <div class='visit-team'>
+        <span class='team-name'>
     <h1><%= @match.visit_team.name %></h1>
-  </span>
-  </div>
+        </span>
+    </div>
+  </section>
+
 </div>
