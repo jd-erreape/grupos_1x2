@@ -70,4 +70,5 @@ module Grupos1x2
 end
 
 STATISTICS_FRAME_URL = "http://widgets.lfp.es/?type=w1&language=es"
-BET_DATA_URL ="http://www.as.com/quiniela/"
+#BET_DATA_URL ="http://www.as.com/quiniela/"
+BET_DATA_URL ="http://www.as.com/quiniela/jornada-12"
