@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grupos1x2</title>
+  <link href='http://fonts.googleapis.com/css?family=Marvel:400,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "application_admin", :media => "all" %>
+  <%= javascript_include_tag "application_admin" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'admin/shared/header' %>
+<%= render 'admin/shared/menu' %>
+<%= yield %>
+<%= render 'admin/shared/footer' %>
+
+
+</body>
+</html>

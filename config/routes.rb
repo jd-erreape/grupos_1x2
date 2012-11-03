@@ -1,6 +1,7 @@
 Grupos1x2::Application.routes.draw do
 
 
+  devise_for :admin, :path => 'admin', :controllers => { :sessions => "admin/admin_sessions" }
   devise_for :users
 
   # The priority is based upon order of creation:
@@ -53,6 +54,7 @@ Grupos1x2::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'welcome#index'
+  match 'admin' => 'admin/dashboard#show'
 
   match 'reload_matches' => 'welcome#reload_matches'
 

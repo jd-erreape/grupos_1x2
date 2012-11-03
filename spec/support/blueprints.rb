@@ -32,3 +32,7 @@ end
 Round.blueprint do
   # Attributes here
 end
+
+Admin.blueprint do
+  # Attributes here
+end
