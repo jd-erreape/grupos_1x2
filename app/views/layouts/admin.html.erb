@@ -9,10 +9,14 @@
 </head>
 <body>
 
-<%= render 'admin/shared/header' %>
-<%= render 'admin/shared/menu' %>
-<%= yield %>
-<%= render 'admin/shared/footer' %>
+<% if current_admin %>
+    <%= render 'admin/shared/header' %>
+    <%= render 'admin/shared/menu' %>
+<% end %>
+    <%= yield %>
+<% if current_admin %>
+    <%= render 'admin/shared/footer' %>
+<% end %>
 
 
 </body>
