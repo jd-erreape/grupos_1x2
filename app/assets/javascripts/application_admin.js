@@ -24,6 +24,7 @@
 //= require ./admin/custom_jquery
 //= require ./admin/jquery.tooltip
 //= require ./admin/jquery.dimensions
+//= require ./admin/general
 
 
 
