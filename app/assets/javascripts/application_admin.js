@@ -15,6 +15,16 @@
 //= require fancybox
 //= require jquery.jqplot.min
 //= require general
+//= require ./admin/ui.core
+//= require ./admin/ui.checkbox
+//= require ./admin/jquery.bind
+//= require ./admin/jquery.selectbox-0.5
+//= require ./admin/jquery.selectbox-0.5_style_2
+//= require ./admin/jquery.filestyle
+//= require ./admin/custom_jquery
+//= require ./admin/jquery.tooltip
+//= require ./admin/jquery.dimensions
+
 
 
 
