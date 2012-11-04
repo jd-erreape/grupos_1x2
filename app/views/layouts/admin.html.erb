@@ -13,7 +13,27 @@
     <%= render 'admin/shared/header' %>
     <%= render 'admin/shared/menu' %>
 <% end %>
+
+<div class="clear"></div>
+
+<!-- start content-outer ........................................................................................................................START -->
+<div id="content-outer">
+  <!-- start content -->
+  <div id="content">
+
+    <%= render :partial => 'admin/shared/flash_block' %>
+
     <%= yield %>
+
+    <div class="clear">&nbsp;</div>
+
+  </div>
+  <!--  end content -->
+  <div class="clear">&nbsp;</div>
+</div>
+<!--  end content-outer........................................................END -->
+
+
 <% if current_admin %>
     <%= render 'admin/shared/footer' %>
 <% end %>

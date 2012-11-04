@@ -37,6 +37,8 @@ group :staging, :production do
   gem 'therubyracer'
 end
 
+gem 'capistrano', '2.13.5'
+
 gem 'mechanize', '2.5.1'
 
 group :test do

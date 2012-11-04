@@ -1,0 +1,14 @@
+es:
+  flash:
+    actions:
+      update:
+        notice: "%{resource_name} actualizado correctamente"
+        error: "%{resource_name} no ha sido actualizado. Por favor corrija los errores"
+        alert: "%{resource_name} no ha sido actualizado. Por favor corrija los errores"
+      create:
+        notice: "%{resource_name} creado correctamente"
+        error: "%{resource_name} no ha sido creado. Por favor corrija los errores"
+        alert: "%{resource_name} no ha sido creado. Por favor corrija los errores"
+      destroy:
+        notice: "%{resource_name} eliminado correctamente"
+

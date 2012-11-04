@@ -1,0 +1,16 @@
+<% flash.each do |name, msg| %>
+    <%= render :partial => 'admin/shared/flash_message', :locals => {:name => name, :msg => msg} if msg != nil %>
+<% end %>
+
+<div class="clear"></div>
+
+<% flash[:success] = nil %>
+<% flash[:error] = nil %>
+<% flash[:alert] = nil %>
+<% flash[:notice] = nil %>
+
+<%= javascript_tag do %>
+    $('document').ready(function(){
+        hide_flash();
+    });
+<% end %>
