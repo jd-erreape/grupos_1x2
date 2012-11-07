@@ -1,6 +1,8 @@
 Use this README file to introduce your application and point to useful places in the API for learning more.
 Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
 
+CADENA DE PRUEBA
+
 Usando bundler 1.0.21
 
 Entorno:
