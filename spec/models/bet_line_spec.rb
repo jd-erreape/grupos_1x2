@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Match do
-  describe 'bet line status' do
+  describe '#guessed?' do
     let(:match) do
       Match.new(
           result: Match::RESULT_1

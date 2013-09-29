@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Bet do
-  describe 'Obtain number of guesses' do
+  describe '#guessed' do
     it 'will count the guessed bet lines' do
       bet = Bet.new
       bet.bet_lines = [
