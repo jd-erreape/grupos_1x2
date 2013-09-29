@@ -16,6 +16,8 @@
 
 #Ignore rvmrc
 /.rvmrc
+/.ruby-gemset
+/.ruby-version
 
 #Ignore .idea
 /.idea

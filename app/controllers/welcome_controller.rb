@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
-  before_filter :load_new_bet_data, :only => [:reload_matches]
+  before_filter :load_new_round_data, :only => [:reload_matches]
   before_filter :load_last_round, :only => [:index]
 
   def reload_matches
@@ -9,9 +9,9 @@ class WelcomeController < ApplicationController
 
   protected
 
-  def load_new_bet_data
-    @bet_data = BetBuilder.new(true)
-    @bet_data.load_matches
+  def load_new_round_data
+    @round_data = RoundLoader.new(true)
+    @round_data.load_matches
   end
 
   def load_last_round

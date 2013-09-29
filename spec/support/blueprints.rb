@@ -8,7 +8,9 @@ require 'machinist/active_record'
 #     body  { "Lorem ipsum..." }
 #   end
 
-Match.blueprint do
+
+
+Round.blueprint do
   # Attributes here
 end
 
@@ -16,8 +18,7 @@ Team.blueprint do
   # Attributes here
 end
 
-
-MatchTeam.blueprint do
+Match.blueprint do
   # Attributes here
 end
 
@@ -25,14 +26,6 @@ Bet.blueprint do
   # Attributes here
 end
 
-User.blueprint do
-  # Attributes here
-end
-
-Round.blueprint do
-  # Attributes here
-end
-
-Admin.blueprint do
+BetLine.blueprint do
   # Attributes here
 end

@@ -1,11 +1,10 @@
 class CreateBets < ActiveRecord::Migration
   def change
     create_table :bets do |t|
-      t.references :match
-      t.integer :selection
+      t.references :round
 
       t.timestamps
     end
-    add_index :bets, :match_id
+    add_index :bets, :round_id
   end
 end

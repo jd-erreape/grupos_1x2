@@ -1,17 +1,8 @@
 class Bet < ActiveRecord::Base
+  has_many :bet_lines
+  belongs_to :round
 
-  SELECTED_1 = 0
-  SELECTED_X = 1
-  SELECTED_2 = 2
-
-  belongs_to :match
-  belongs_to :user
-  attr_accessible :selection, :match_id, :user_id
-
-  scope :for_round, lambda { |round| joins(:match => :round).where('rounds.id = ?', round.id) }
-
-  scope :voted_1, where(:selection => SELECTED_1)
-  scope :voted_X, where(:selection => SELECTED_X)
-  scope :voted_2, where(:selection => SELECTED_2)
-
+  def guessed
+    bet_lines.select { |bet_line| bet_line.guessed? }
+  end
 end

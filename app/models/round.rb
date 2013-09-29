@@ -1,15 +1,6 @@
 class Round < ActiveRecord::Base
-
-  has_many :matches
+  has_many :matches, dependent: :destroy
+  has_many :bets, dependent: :destroy
 
   attr_accessible :number
-
-  scope :by_number, order('number ASC')
-
-  def self.last_round
-    by_number.last
-  end
-
-
-
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121015212925) do
+ActiveRecord::Schema.define(:version => 20130818221828) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -22,35 +22,36 @@ ActiveRecord::Schema.define(:version => 20121015212925) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
 
+  create_table "bet_lines", :force => true do |t|
+    t.integer  "match_id"
+    t.integer  "bet_id"
+    t.string   "selected_result"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "bet_lines", ["bet_id"], :name => "index_bet_lines_on_bet_id"
+  add_index "bet_lines", ["match_id"], :name => "index_bet_lines_on_match_id"
+
   create_table "bets", :force => true do |t|
-    t.integer  "match_id"
-    t.integer  "selection"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "user_id"
-  end
-
-  add_index "bets", ["match_id"], :name => "index_bets_on_match_id"
-  add_index "bets", ["user_id"], :name => "index_bets_on_user_id"
-
-  create_table "match_teams", :force => true do |t|
-    t.integer  "match_id"
-    t.integer  "team_id"
-    t.boolean  "is_local"
+    t.integer  "round_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "match_teams", ["match_id"], :name => "index_match_teams_on_match_id"
-  add_index "match_teams", ["team_id"], :name => "index_match_teams_on_team_id"
+  add_index "bets", ["round_id"], :name => "index_bets_on_round_id"
 
   create_table "matches", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "position"
     t.integer  "round_id"
+    t.integer  "home_team_id"
+    t.integer  "away_team_id"
+    t.string   "result"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
+  add_index "matches", ["away_team_id"], :name => "index_matches_on_away_team_id"
+  add_index "matches", ["home_team_id"], :name => "index_matches_on_home_team_id"
   add_index "matches", ["round_id"], :name => "index_matches_on_round_id"
 
   create_table "rounds", :force => true do |t|

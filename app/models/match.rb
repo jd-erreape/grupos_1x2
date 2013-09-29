@@ -1,20 +1,11 @@
 class Match < ActiveRecord::Base
+  RESULT_1 = '1'
+  RESULT_X = 'X'
+  RESULT_2 = '2'
 
-  has_many :match_teams, :dependent => :destroy
-  has_many :teams, :through => :match_teams
-  has_many :bets
   belongs_to :round
+  belongs_to :home_team, class_name: Team, foreign_key: :home_team_id
+  belongs_to :away_team, class_name: Team, foreign_key: :away_team_id
 
-  attr_accessible :position
-
-  scope :by_position, order('position ASC')
-
-  def local_team
-    match_teams.first.is_local? ? match_teams.first.team : match_teams.last.team
-  end
-
-  def visit_team
-    !match_teams.first.is_local? ? match_teams.first.team : match_teams.last.team
-  end
-
+  attr_accessible :home_team, :away_team, :result
 end
