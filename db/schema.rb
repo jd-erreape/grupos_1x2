@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130818221828) do
+ActiveRecord::Schema.define(:version => 20131002192929) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130818221828) do
     t.integer  "round_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "bet_lines"
   end
 
   add_index "bets", ["round_id"], :name => "index_bets_on_round_id"

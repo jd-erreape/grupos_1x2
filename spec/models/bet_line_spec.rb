@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Match do
   describe '#guessed?' do
     let(:match) do
-      Match.new(
+      Match.make!(
           result: Match::RESULT_1
       )
     end

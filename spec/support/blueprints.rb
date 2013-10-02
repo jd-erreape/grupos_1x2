@@ -25,7 +25,3 @@ end
 Bet.blueprint do
   # Attributes here
 end
-
-BetLine.blueprint do
-  # Attributes here
-end
