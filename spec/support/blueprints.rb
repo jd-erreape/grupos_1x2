@@ -18,14 +18,14 @@ Team.blueprint do
   # Attributes here
 end
 
-Match.blueprint do
+Game.blueprint do
   # Attributes here
 end
 
-Bet.blueprint do
+Column.blueprint do
   # Attributes here
 end
 
-BetLine.blueprint do
+ColumnGame.blueprint do
   # Attributes here
 end

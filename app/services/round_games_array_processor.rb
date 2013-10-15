@@ -1,4 +1,4 @@
-class RoundMatchesArrayProcessor
+class RoundGamesArrayProcessor
   def initialize(team_pairs_array)
     @team_pairs_array = team_pairs_array
   end
