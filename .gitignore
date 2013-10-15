@@ -28,3 +28,9 @@
 
 #Ignore rspec config
 /.rspec
+
+#Ignore installed gems
+/vendor/bundler/*
+
+#Ignore System files
+*.DS_Store
