@@ -1,5 +1,5 @@
 class RoundCreator
-  attr_accessor :matches, :round_number
+  attr_accessor :games, :round_number
 
   def initialize(attributes = {})
     attributes.each do |name, value|
@@ -9,8 +9,8 @@ class RoundCreator
 
   def create
     round = Round.create(number: @round_number)
-    @matches.each do |match|
-      round.matches.create(home_team: match[0], away_team: match[1])
+    @games.each do |game|
+      round.games.create(home_team: game[0], away_team: game[1])
     end
     round
   end
