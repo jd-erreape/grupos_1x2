@@ -1,9 +1,9 @@
 class UserBetChecker
-  attr_reader :user, :match
+  attr_reader :user, :game
   
-  def initialize(user,match)
+  def initialize(user,game)
     @user = user
-    @match = match
+    @game = game
   end
 
 

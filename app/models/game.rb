@@ -1,4 +1,4 @@
-class Match < ActiveRecord::Base
+class Game < ActiveRecord::Base
   RESULT_1 = '1'
   RESULT_X = 'X'
   RESULT_2 = '2'

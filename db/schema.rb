@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130818221828) do
+ActiveRecord::Schema.define(:version => 20131015200222) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -22,26 +22,27 @@ ActiveRecord::Schema.define(:version => 20130818221828) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
 
-  create_table "bet_lines", :force => true do |t|
-    t.integer  "match_id"
-    t.integer  "bet_id"
+  create_table "column_games", :force => true do |t|
+    t.integer  "game_id"
+    t.integer  "column_id"
     t.string   "selected_result"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
 
-  add_index "bet_lines", ["bet_id"], :name => "index_bet_lines_on_bet_id"
-  add_index "bet_lines", ["match_id"], :name => "index_bet_lines_on_match_id"
+  add_index "column_games", ["column_id"], :name => "index_bet_lines_on_bet_id"
+  add_index "column_games", ["game_id"], :name => "index_bet_lines_on_match_id"
 
-  create_table "bets", :force => true do |t|
+  create_table "columns", :force => true do |t|
     t.integer  "round_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "bet_lines"
   end
 
-  add_index "bets", ["round_id"], :name => "index_bets_on_round_id"
+  add_index "columns", ["round_id"], :name => "index_bets_on_round_id"
 
-  create_table "matches", :force => true do |t|
+  create_table "games", :force => true do |t|
     t.integer  "round_id"
     t.integer  "home_team_id"
     t.integer  "away_team_id"
@@ -50,9 +51,9 @@ ActiveRecord::Schema.define(:version => 20130818221828) do
     t.datetime "updated_at",   :null => false
   end
 
-  add_index "matches", ["away_team_id"], :name => "index_matches_on_away_team_id"
-  add_index "matches", ["home_team_id"], :name => "index_matches_on_home_team_id"
-  add_index "matches", ["round_id"], :name => "index_matches_on_round_id"
+  add_index "games", ["away_team_id"], :name => "index_matches_on_away_team_id"
+  add_index "games", ["home_team_id"], :name => "index_matches_on_home_team_id"
+  add_index "games", ["round_id"], :name => "index_matches_on_round_id"
 
   create_table "rounds", :force => true do |t|
     t.integer  "number"

@@ -9,7 +9,7 @@ class RoundReaders::AsScrappingRoundReader
 
   def read_round_data
     agent = get_page_agent
-    load_matches(agent)
+    load_games(agent)
   end
 
   def get_page_agent
@@ -18,12 +18,10 @@ class RoundReaders::AsScrappingRoundReader
     agent
   end
 
-  def load_matches(agent)
-    matches = []
-    get_table_rows(agent).each do |table_row|
-      matches << process_table_row(table_row)
+  def load_games(agent)
+    get_table_rows(agent).collect do |table_row|
+      process_table_row(table_row)
     end
-    matches
   end
 
   def get_table_rows(agent)

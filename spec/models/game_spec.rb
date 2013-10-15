@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Match do
+describe Game do
 
 end

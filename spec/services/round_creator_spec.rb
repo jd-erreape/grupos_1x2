@@ -6,24 +6,24 @@ describe RoundCreator do
       round = RoundCreator.new(
         {
           round_number: 1,
-          matches: match_array
+          games: games_array
         }
       ).create
-      assert_matches_have_been_created round
+      assert_games_have_been_created round
     end
   end
 
-  def assert_matches_have_been_created(round)
-    round.matches.count.should == 3
-    round.matches[0].home_team.name.should == 'Real Madrid FC'
-    round.matches[0].away_team.name.should == 'FC Barcelona'
-    round.matches[1].home_team.name.should == 'Sevilla FC'
-    round.matches[1].away_team.name.should == 'Malaga FC'
-    round.matches[2].home_team.name.should == 'At. Madrid'
-    round.matches[2].away_team.name.should == 'Ath. Bilbao'
+  def assert_games_have_been_created(round)
+    round.games.count.should == 3
+    round.games[0].home_team.name.should == 'Real Madrid FC'
+    round.games[0].away_team.name.should == 'FC Barcelona'
+    round.games[1].home_team.name.should == 'Sevilla FC'
+    round.games[1].away_team.name.should == 'Malaga FC'
+    round.games[2].home_team.name.should == 'At. Madrid'
+    round.games[2].away_team.name.should == 'Ath. Bilbao'
   end
 
-  def match_array
+  def games_array
     [
       [Team.create(name: 'Real Madrid FC'), Team.create(name: 'FC Barcelona')],
       [Team.create(name: 'Sevilla FC'), Team.create(name: 'Malaga FC')],
