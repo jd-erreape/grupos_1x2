@@ -14,12 +14,9 @@ Round.blueprint do
   # Attributes here
 end
 
-Team.blueprint do
-  # Attributes here
-end
-
 Game.blueprint do
-  # Attributes here
+  home_team_name {'Real Madrid'}
+  away_team_name {'Barcelona'}
 end
 
 Column.blueprint do

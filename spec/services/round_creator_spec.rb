@@ -25,9 +25,9 @@ describe RoundCreator do
 
   def games_array
     [
-      [Team.create(name: 'Real Madrid FC'), Team.create(name: 'FC Barcelona')],
-      [Team.create(name: 'Sevilla FC'), Team.create(name: 'Malaga FC')],
-      [Team.create(name: 'At. Madrid'), Team.create(name: 'Ath. Bilbao')]
+      [Team.new(name: 'Real Madrid FC'), Team.new(name: 'FC Barcelona')],
+      [Team.new(name: 'Sevilla FC'), Team.new(name: 'Malaga FC')],
+      [Team.new(name: 'At. Madrid'), Team.new(name: 'Ath. Bilbao')]
     ]
   end
 end

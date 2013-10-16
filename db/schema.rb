@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015200222) do
+ActiveRecord::Schema.define(:version => 20131016183818) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",              :default => "", :null => false
@@ -44,15 +44,13 @@ ActiveRecord::Schema.define(:version => 20131015200222) do
 
   create_table "games", :force => true do |t|
     t.integer  "round_id"
-    t.integer  "home_team_id"
-    t.integer  "away_team_id"
     t.string   "result"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "home_team_name"
+    t.string   "away_team_name"
   end
 
-  add_index "games", ["away_team_id"], :name => "index_matches_on_away_team_id"
-  add_index "games", ["home_team_id"], :name => "index_matches_on_home_team_id"
   add_index "games", ["round_id"], :name => "index_matches_on_round_id"
 
   create_table "rounds", :force => true do |t|
