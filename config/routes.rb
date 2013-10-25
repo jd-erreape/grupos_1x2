@@ -70,6 +70,10 @@ Grupos1x2::Application.routes.draw do
     resources :teams, :only => [:index, :new, :create, :edit, :update, :destroy]
   end
 
+  namespace :api do
+    resources :columns
+  end
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

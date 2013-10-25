@@ -34,3 +34,6 @@
 
 #Ignore System files
 *.DS_Store
+
+#Ignore api docs
+/doc/api

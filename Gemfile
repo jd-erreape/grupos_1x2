@@ -42,6 +42,8 @@ gem 'capistrano', '2.13.5'
 
 gem 'mechanize', '2.5.1'
 
+gem 'jbuilder'
+
 group :test do
   gem 'rspec-rails', '2.11.0'
   gem 'database_cleaner', '0.8.0'
@@ -49,6 +51,7 @@ group :test do
   gem 'shoulda-matchers', '1.3.0'
   gem 'faker', '1.1.2'
   gem 'cucumber'
+  gem 'rspec_api_documentation'
 end
 
 group :develoment do

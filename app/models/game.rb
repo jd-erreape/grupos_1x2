@@ -4,8 +4,33 @@ class Game < ActiveRecord::Base
   RESULT_2 = '2'
 
   belongs_to :round
-  belongs_to :home_team, class_name: Team, foreign_key: :home_team_id
-  belongs_to :away_team, class_name: Team, foreign_key: :away_team_id
 
-  attr_accessible :home_team, :away_team, :result
+  attr_accessible :result, :home_team, :away_team
+
+  # TODO TEST
+  def teams
+    @teams ||= [home_team, away_team]
+  end
+
+  # TODO TEST
+  def home_team
+    @home_team ||= Team.new(name: home_team_name)
+  end
+
+  # TODO TEST
+  def away_team
+    @away_team ||= Team.new(name: away_team_name)
+  end
+
+  # TODO TEST
+  def home_team=(team)
+    @home_team = team
+    self.home_team_name = team.name
+  end
+
+  # TODO TEST
+  def away_team=(team)
+    @away_team = team
+    self.away_team_name = team.name
+  end
 end
